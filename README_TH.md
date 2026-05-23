@@ -1,26 +1,32 @@
 # Crystal Clear Web System
 
-## หน้าเว็บ
-- `index.html` = หน้าหลักลูกค้าเช็คสถานะ
-- `register.html` = ลูกค้ากรอกข้อมูลเองและสร้างออเดอร์
-- `login.html` = หน้า Login แอดมิน
-- `admin.html` = Seller Portal หลังบ้าน
+เว็บระบบลูกค้าและหลังบ้านสำหรับร้าน Crystal Clear
 
-## Login Demo
-Username: `admin`
+## หน้าเว็บ
+
+- `index.html` หน้าหลักลูกค้า มี 2 ตัวเลือก: ลงทะเบียนเพื่อรับรีเทนเนอร์ / ตรวจสอบสถานะ
+- `register.html` ฟอร์มลูกค้ากรอกข้อมูลเอง
+- `login.html` หน้า Login Admin แยกต่างหาก
+- `admin.html` หลังบ้าน Seller Portal
+
+## Admin
+
+Username: `admin`  
 Password: `1234`
 
-## Google Sheet
-สร้างไว้แล้ว: https://docs.google.com/spreadsheets/d/1x00ZZweul36bYY7ofIeBDt66E29UZvpDXBHJobFNCDQ/edit
+แก้ได้ใน `config.js`
 
-## วิธีต่อ Google Sheet จริง
-1. เปิด Google Sheet
-2. Extensions > Apps Script
+## วิธีซ่อนปุ่ม Admin
+
+หน้า `index.html` ไม่มีปุ่ม Seller Portal โชว์ชัด ๆ แล้ว มีแค่ปุ่ม ⚙ มุมขวาล่างแบบจางมาก และสามารถดับเบิลคลิกโลโก้/คลิกโลโก้ 5 ครั้งเพื่อเข้า `login.html` ได้
+
+## Google Sheet
+
+1. เปิด Google Sheet ที่สร้างชื่อ Crystal Clear Orders Database
+2. ไปที่ Extensions > Apps Script
 3. วางโค้ดจาก `apps-script/Code.gs`
 4. Deploy > New deployment > Web app
-5. Execute as: Me
-6. Who has access: Anyone
-7. Copy Web App URL
-8. เปิด `config.js` แล้วใส่ URL ใน `API_URL`
+5. Copy Web App URL
+6. เอา URL ไปใส่ใน `config.js` ที่ `API_URL`
 
-ถ้ายังไม่ใส่ API_URL ระบบจะใช้ LocalStorage สำหรับทดลองหน้าเว็บก่อน
+ถ้ายังไม่ใส่ API_URL เว็บจะใช้ข้อมูลตัวอย่างและ LocalStorage ในเครื่องก่อน
